@@ -10,7 +10,7 @@ RUN mvn clean install
 
 
 # Docker Build Stage
-FROM adoptopenjdk/openjdk11-openj9
+FROM adoptopenjdk/openjdk11:latest
 
 COPY --from=build /opt/app/target/*.jar app.jar
 
