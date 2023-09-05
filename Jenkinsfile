@@ -16,7 +16,7 @@ node {
 
           stage('Deploy docker'){
                   echo "Docker Image Tag Name: ${dockerImageTag}"
-                  withDockerRegistry([ credentialsId: "anshupriya24", url: "https://hub.docker.com/repositories/anshupriya24" ]) {
+                  withDockerRegistry([ credentialsId: "05622b6d-093a-4948-b982-2c8ce00881d6", url: "https://hub.docker.com/repositories/anshupriya24" ]) {
         dockerImage.push()
         }
           }
