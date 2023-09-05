@@ -1,5 +1,5 @@
 # Docker Build Stage
-FROM adoptopenjdk/maven-openjdk11-openj9 AS build
+FROM adoptopenjdk/maven-openjdk11 AS build
 
 
 # Build Stage
