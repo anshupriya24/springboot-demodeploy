@@ -16,8 +16,9 @@ node {
 
           stage('Deploy docker'){
                   echo "Docker Image Tag Name: ${dockerImageTag}"
-                  sh "docker stop springboot-deploy || true && docker rm springboot-deploy || true"
-                  sh "docker run --name springboot-deploy -d -p 8081:8081 springboot-deploy:${env.BUILD_NUMBER}"
+                  withDockerRegistry([ credentialsId: "anshupriya24", url: "https://hub.docker.com/repositories/anshupriya24" ]) {
+        dockerImage.push()
+        }
           }
     }catch(e){
 //         currentBuild.result = "FAILED"
